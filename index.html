@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK-AUTO</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./mobile-fix.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Webflow Preloader -->
+  <div id="webflow-preloader" class="preloader">
+    <div class="loader-wrapper">
+      <img src="./public/logo.png" alt="SK-AUTO Logo" class="preloader-logo">
+      <div class="bar">
+        <div class="clipper">
+          <div class="clipped-light"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Header -->
+  <header class="header">
+    <div class="container flex justify-between items-center">
+      <div class="logo">
+        <img src="assets/logo1.png" alt="SK-AUTO Logo" class="logo-img">
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav">
+        <ul class="flex gap-8 items-center">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#" class="btn contact-trigger">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <video autoplay muted loop playsinline id="hero-video">
+      <source src="assets/hero-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-animate">Welcome to <span style="color: var(--primary-red);">SK AUTO</span>
+        </h1>
+        <p class="hero-animate">We provide different kind of services</p>
+        <a href="#" class="btn hero-animate contact-trigger">CONTACT US</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo Strip -->
+  <!-- Dark Feature Section -->
+  <section class="dark-feature section bg-dark text-center" id="about">
+    <!-- Background Slider (Static) -->
+    <div class="background-slider">
+      <div class="slider-image active"
+        style="background-image: url('assets/high-quality-service/WhatsApp Image 2025-11-14 at 20.18.12.jpeg');"></div>
+      <div class="slider-overlay"></div>
+    </div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+      <h2 class="section-title">High-Quality Service. Zero Compromise.<br> </h2>
+      <p class="section-subtitle">Team of young technicians making dreams come true</p>
+      <div class="flex justify-center gap-4" style="margin-top: 30px;">
+        <a href="#" class="btn btn-outline contact-trigger" id="openContactModal">CONTACT US</a>
+      </div>
+
+      <div class="stats-grid flex justify-between"
+        style="margin-top: 60px; border-top: 1px solid #444; padding-top: 40px;">
+        <div class="stat-item">
+          <h3>100+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Client-First Approach</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services section" id="services">
+    <div class="container text-center">
+      <p class="text-uppercase" style="color: #999; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">Our Core
+      </p>
+      <h2 class="section-title gradient-text" style="margin-bottom: 50px;">"Services We Provide"</h2>
+    </div>
+
+    <!-- Full Width Carousel -->
+    <div class="services-carousel-wrapper">
+      <div class="services-grid" id="servicesGrid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/major.jpeg" alt="Major Repairs">
+          </div>
+          <h3>Major repairs</h3>
+          <p>Reliable solutions for complex engine and mechanical issues.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/car-d.jpeg" alt="Car Diagnostic">
+          </div>
+          <h3>Car Diagnostic</h3>
+          <p>Precise computer-based scanning to detect and fix problems fast.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/bodywork.jpeg" alt="Bodywork">
+          </div>
+          <h3>Bodywork</h3>
+          <p>Professional exterior restoration, repair, and refinishing.</p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/oil.jpeg" alt="Oil Change">
+          </div>
+          <h3>Oil Change</h3>
+          <p>Quality oil and filter service to keep your engine running smoothly.</p>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/tyre.jpg" alt="Tire Service">
+          </div>
+          <h3>Tire Service</h3>
+          <p>Expert mounting, balancing, and tire maintenance for safe driving.</p>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="service-img">
+            <img src="/assets/services we provide/syn.jpeg" alt="syn preparation">
+          </div>
+          <h3>periodical inspection (syn)</h3>
+          <p>Complete vehicle check to ensure safety, performance, and road readiness.</p>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons Centered Below -->
+      <div class="carousel-nav-container">
+        <button class="carousel-btn carousel-btn-prev" id="servicesPrev" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-btn-next" id="servicesNext" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Logo Carousel - Full Width -->
+    <div class="logo-loop-container" style="margin-top: 80px;">
+      <div class="logo-loop-track">
+        <!-- First set of logos -->
+        <div class="logo-item">
+          <img src="assets/brembo-logo.png" alt="Brembo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/continental-logo.jpg" alt="Continental">
+        </div>
+        <div class="logo-item">
+          <img src="assets/bosch-logo.png" alt="Bosch">
+        </div>
+        <div class="logo-item">
+          <img src="assets/trw-logo.png" alt="TRW">
+        </div>
+        <div class="logo-item">
+          <img src="assets/skf-logo.png" alt="SKF">
+        </div>
+        <div class="logo-item">
+          <img src="assets/lemforder-logo.png" alt="Lemförder">
+        </div>
+        <div class="logo-item">
+          <img src="assets/swag-logo.png" alt="SWAG">
+        </div>
+        <div class="logo-item">
+          <img src="assets/pierburg-logo.png" alt="Pierburg">
+        </div>
+        <div class="logo-item">
+          <img src="assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
+        </div>
+
+        <!-- Duplicate set for seamless loop -->
+        <div class="logo-item">
+          <img src="assets/brembo-logo.png" alt="Brembo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/continental-logo.jpg" alt="Continental">
+        </div>
+        <div class="logo-item">
+          <img src="assets/bosch-logo.png" alt="Bosch">
+        </div>
+        <div class="logo-item">
+          <img src="assets/trw-logo.png" alt="TRW">
+        </div>
+        <div class="logo-item">
+          <img src="assets/skf-logo.png" alt="SKF">
+        </div>
+        <div class="logo-item">
+          <img src="assets/lemforder-logo.png" alt="Lemförder">
+        </div>
+        <div class="logo-item">
+          <img src="assets/swag-logo.png" alt="SWAG">
+        </div>
+        <div class="logo-item">
+          <img src="assets/pierburg-logo.png" alt="Pierburg">
+        </div>
+        <div class="logo-item">
+          <img src="assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
+        </div>
+        <div class="logo-item">
+          <img src="assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose section"
+    style="background-image: url('/assets/why-choose-us/2023-BMW-M4-CSL-teaser-2-Photoroom.png'); background-color: #000;">
+    <div class="why-choose-overlay"></div>
+    <div class="container">
+      <div class="why-choose-content">
+        <h2 class="section-title">Why Choose US ?</h2>
+        <p class="mb-4">We are not just another workshop, we are team of young technicians and we are following our
+          dreams and our passions therefore you can expect that your car will be threated with passion and love.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spacer -->
+  <div class="spacer-section"></div>
+
+  <!-- Professional Care Section -->
+  <section class="professional-care section">
+    <video autoplay muted loop playsinline class="professional-care-bg-video">
+      <source src="/assets/your-car/your-car.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="professional-care-overlay"></div>
+    <div class="container">
+      <div class="professional-care-content">
+        <h2 class="section-title">Your car deserves <br> professional care.</h2>
+        <p class="mb-4">Mainiting a car can be expensive and stressful. But not in SK Auto. Get completly new experience
+          and give your car best care.</p>
+        <ul class="check-list">
+          <li>Warranty</li>
+          <li>Quality</li>
+          <li>Fair prices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials section text-center" style="background-color: #000;">
+    <div class="container">
+      <h2 class="section-title">But don't take our word for it - here is how our clients experienced our services</h2>
+      <p class="section-subtitle"></p>
+
+      <div class="testimonials-carousel-wrapper" style="position: relative;">
+        <div class="testimonials-grid" id="testimonialsGrid" style="margin-top: 50px;">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"These guys know what they are doing. Replaced the injectors on my Opel Vivaro when
+              no one else could. Great service and professional approach."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AS</div>
+              <div class="text-left">
+                <h4>Alvis Skapars</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Excellent service and expertise. The team quickly identified the issue with my
+              vehicle and completed the repair efficiently and professionally. Their clear communication and attention
+              to detail made the whole process easy and stress-free. Highly recommended for anyone looking for a
+              trustworthy mechanic."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                OH</div>
+              <div class="text-left">
+                <h4>Oskar Ham</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"⭐⭐⭐⭐⭐
+
+              I had an excellent experience at this service. The garage has a great atmosphere with stylish details, and
+              the staff are both professional and genuinely friendly. They responded quickly, were punctual, and the
+              whole process went smoothly. I also appreciated that they took care of my old tires, saving me time. On
+              top of that, the service was very reasonably priced. Highly recommended!"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                O</div>
+              <div class="text-left">
+                <h4>Oleksii</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Smooth operator with excellent service! I’ve been here before and once again they
+              did a great job tinkering with my car. Thanks for the effort, guys — top notch work!"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AS</div>
+              <div class="text-left">
+                <h4>Atis Sirmais</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Meget venligt og professionelt team. De gav mig flere muligheder at vælge imellem og
+              forklarede tydeligt, hvad de havde lavet. Arbejdet på min bil blev udført rigtig godt, og jeg er meget
+              tilfreds med resultatet. De hjalp også med en lille ekstra ting, som gjorde hele oplevelsen endnu mere
+              bekvem. Kan varmt anbefales!
+              Very friendly and professional team. They gave me a few options to choose from and clearly explained
+              everything they did. The work on my car was done really well, and I’m very happy with the result. They
+              even helped me out with something extra that made the whole experience even more convenient. Highly
+              recommend!"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                IH</div>
+              <div class="text-left">
+                <h4>Ilja Holmovs</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Generelt nogle fornuftige og flinke knejter som hjalp med min bil før den skulle til
+              syn. Pålidelig service - kan sagtens anbefale dem! :)"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AP</div>
+              <div class="text-left">
+                <h4>Anders Pedersen</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 7 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Amazing service and fair prices. They always explain what needs to be done and get
+              the job done quickly. Trustworthy and professional mechanics!."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AG</div>
+              <div class="text-left">
+                <h4>Adam Gergely</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 8 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The best service! The mechanics are professionals and did the job fast. I am going
+              to use their service again. Can only recommend!"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                DI</div>
+              <div class="text-left">
+                <h4>Dan Iordan</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 9 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Excellent service! I have been servicing my car here for over 2 years. Quick
+              diagnosis of the problem and effective solution at a reasonable price. I recommend it ❤️."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AV</div>
+              <div class="text-left">
+                <h4>Анна Вязовская</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 10 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Very helpful, with a great attitude and highly professional service. I’ve been there
+              a few times now, and Krists always welcomes you with practical solutions and manages to solve issues that
+              others couldn’t. The service is fast, reliable, and fairly priced. He’s also great at preparing the car
+              for inspection and finds the best solutions for your specific needs. Highly recommended."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                SH</div>
+              <div class="text-left">
+                <h4>shaineda1</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 11 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Had a very good experience and will definitely come again. The crew explained the
+              estimate, prices and my options really clearly. Super helpful and easy to deal with!"</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                MM</div>
+              <div class="text-left">
+                <h4>Martins Morozovs</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 12 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Friendly staff, fair pricing, and quality work. Guys working here are super nice and
+              willing to help no matter the circumstances. Definitely the place to go around Horsens for a quality job
+              that doesnt hurt the wallet too much."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                LL</div>
+              <div class="text-left">
+                <h4>Ladislav Laský</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 13 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Jeg har brugt SK Auto nu 3 gange, og de er altid super flinke - tager sig god tid
+              til at forklare situationen bilen er i, finder priser med det samme, og estimerer prisen for den færdig
+              reparerede bil. Skulle der opstå udfordringer …."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                ND</div>
+              <div class="text-left">
+                <h4>Neda Djavaherian</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 14 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Professional guys that knows what they are doing, pleasure to have car serviced here
+              with quality work done to it."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                RV</div>
+              <div class="text-left">
+                <h4>Renatas Valatka</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 15 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Jeg kan varmt anbefale SK Auto! Priserne er rimelige og de er erfarne. Man kan
+              virkelig mærke, at de går op i deres arbejde og i at give den bedste service. Jeg kan varmt anbefale deres
+              værksted til alle, der ønsker kvalitet og tryghed."</p>
+            <div class="user-info flex items-center gap-4">
+              <div class="user-avatar-placeholder"
+                style="width: 50px; height: 50px; border-radius: 50%; background-color: #333; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                AZ</div>
+              <div class="text-left">
+                <h4>Agnieszka Zadworna</h4>
+                <span>Client</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="carousel-nav-container"
+          style="position: relative; margin-top: 30px; bottom: auto; left: auto; transform: none;">
+          <button class="carousel-btn carousel-btn-prev" id="testimonialsPrev" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-btn-next" id="testimonialsNext" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="location section" style="background-color: #000;" id="contact">
+    <div class="container">
+      <p class="location-tagline">Tagline</p>
+      <h2 class="section-title">Location</h2>
+      <p class="location-description">Come visit us at our primary service center.</p>
+
+      <div class="location-content">
+        <div class="location-list">
+          <div class="location-item">
+            <h4>Hatting</h4>
+            <p>Præstemarksvej 1B, 8700 Hatting, DK</p>
+            <a href="#" class="view-map-link">View Map</a>
+          </div>
+
+          <div class="location-item">
+            <h4>Working hours</h4>
+            <p>Monday-Saturday</p>
+            <p>10-18h</p>
+          </div>
+
+
+        </div>
+
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2236.466774436656!2d9.907663076991038!3d55.86111597312484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c63d08ae87581%3A0x3d82346d0304381!2sPr%C3%A6stemarksvej%201B%2C%208700%20Hatting!5e0!3m2!1sen!2sdk!4v1709668800000!5m2!1sen!2sdk"
+            width="100%" style="border:0; border-radius: 12px; height: 100%;" allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark section" style="padding: 40px 0;">
+    <div class="container flex justify-between items-center">
+      <div class="footer-logo">
+        <span style="font-weight: 900; font-size: 1.5rem; color: white;">SK<span
+            style="color: var(--primary-red);">AUTO</span></span>
+      </div>
+      <div class="footer-links flex gap-8">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="socials flex gap-4">
+        <a href="https://www.facebook.com/profile.php?id=61573467447134" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/skautohorsens/" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="container text-center"
+      style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; color: #666;">
+      &copy; 2025 SK-AUTO. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div class="modal-grid">
+        <!-- Left Column: Contact Info -->
+        <div class="modal-info">
+          <p class="modal-tagline">Contact Form</p>
+          <h2 class="modal-title">Contact us</h2>
+          <p class="modal-desc">We are happy to take your inquiry</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:email@example.com">S.k.auto.vaerksted@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <a href="tel:+15550000000">+45 49 90 02 77</a>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>
+                Præstemarksvej 1B, Horsens, Denmark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Form -->
+        <div class="modal-form-container">
+          <form class="modal-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+            </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="terms" name="terms">
+              <label for="terms">I accept the <a href="#">Terms</a></label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
