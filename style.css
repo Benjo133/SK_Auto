@@ -1,12 +1,12 @@
-@import './slider.css';
+@import "./slider.css";
 
 :root {
-  --primary-red: #D32F2F;
+  --primary-red: #d32f2f;
   --dark-bg: #1a1a1a;
   --darker-bg: #111111;
   --text-light: #ffffff;
   --text-gray: #cccccc;
-  --font-main: 'Inter', sans-serif;
+  --font-main: "Inter", sans-serif;
   --container-width: 1200px;
 }
 
@@ -153,7 +153,9 @@ ul {
   top: 0;
   z-index: 1000;
   color: white;
-  transition: background-color 0.3s ease, padding 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    padding 0.3s ease;
 }
 
 .header .container {
@@ -222,7 +224,11 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }
 
 .hero-content {
@@ -437,7 +443,7 @@ ul {
 }
 
 .service-img::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -625,14 +631,15 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-    linear-gradient(to bottom,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.8) 10%,
-      rgba(0, 0, 0, 0.6) 20%,
-      rgba(0, 0, 0, 0.6) 80%,
-      rgba(0, 0, 0, 0.8) 90%,
-      rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0.6) 80%,
+    rgba(0, 0, 0, 0.8) 90%,
+    rgba(0, 0, 0, 1) 100%
+  );
   z-index: 1;
 }
 
@@ -785,7 +792,7 @@ ul {
 }
 
 .check-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--primary-red);
@@ -914,9 +921,10 @@ ul {
   color: white;
   font-weight: bold;
   border: 1px solid #444;
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 4px;
   font-size: 0.8rem;
+  display: flex;
 }
 
 .socials a:hover {
@@ -979,11 +987,13 @@ ul {
   height: 100%;
   background-color: var(--primary-red);
   position: relative;
-  box-shadow: 0 0 20px var(--primary-red), 0 0 10px #fff;
+  box-shadow:
+    0 0 20px var(--primary-red),
+    0 0 10px #fff;
 }
 
 .clipped-light::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -1019,7 +1029,6 @@ ul {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-
   html,
   body {
     overflow-x: hidden !important;
@@ -1195,19 +1204,19 @@ ul {
     height: 100vh;
     min-height: 100vh;
     padding: 60px 0;
-    background-image: url('/assets/why-choose-mobile.jpg') !important;
+    background-image: url("/assets/why-choose-mobile.jpg") !important;
     background-size: cover;
     background-position: center;
   }
 
   .why-choose::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/why-choose-mobile.jpg');
+    background-image: url("/assets/why-choose-mobile.jpg");
     background-size: cover;
     background-position: center;
     filter: blur(3px);
@@ -1215,11 +1224,13 @@ ul {
   }
 
   .why-choose-overlay {
-    background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.75) 8%,
-        rgba(0, 0, 0, 0.75) 92%,
-        rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.75) 8%,
+      rgba(0, 0, 0, 0.75) 92%,
+      rgba(0, 0, 0, 1) 100%
+    );
     z-index: 1;
   }
 
@@ -1566,13 +1577,15 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.8) 10%,
-      rgba(0, 0, 0, 0.6) 20%,
-      rgba(0, 0, 0, 0.6) 80%,
-      rgba(0, 0, 0, 0.8) 90%,
-      rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 10%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0.6) 80%,
+    rgba(0, 0, 0, 0.8) 90%,
+    rgba(0, 0, 0, 1) 100%
+  );
   z-index: 1;
 }
 
