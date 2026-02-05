@@ -15,14 +15,27 @@ const pages = languages.map(lang => {
     name: lang,
     filename: `${lang}/index.html`,
     template: 'index.html',
-    data: translations 
+    data: {
+      t: translations 
+    }
   };
 });
 
 export default defineConfig({
   plugins: [
     createMpaPlugin({
-      pages: pages
+      pages: pages,
+      engine: "ejs"
     })
-  ]
+  ],
+server: {
+    open: '/dk/', 
+    proxy: {
+      '^/$': {
+        target: 'http://localhost:5173',
+        rewrite: () => '/dk/',
+      },
+    },
+  },
+  base: '/',
 });

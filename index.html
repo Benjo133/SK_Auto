@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="dk">
+<html lang="<%= t["Lang"] %>">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SK-AUTO</title>
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="stylesheet" href="./mobile-fix.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/mobile-fix.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <!-- Webflow Preloader -->
   <div id="webflow-preloader" class="preloader">
     <div class="loader-wrapper">
-      <img src="./public/logo.png" alt="SK-AUTO Logo" class="preloader-logo">
+      <img src="/public/logo.png" alt="SK-AUTO Logo" class="preloader-logo">
       <div class="bar">
         <div class="clipper">
           <div class="clipped-light"></div>
@@ -31,7 +31,7 @@
     <div class="container flex justify-between items-center">
       <div class="logo">
         <a href="#home">
-          <img src="assets/logo1.png" alt="SK-AUTO Logo" class="logo-img">
+          <img src="/assets/logo1.png" alt="SK-AUTO Logo" class="logo-img">
         </a>
       </div>
 
@@ -43,12 +43,20 @@
       </button>
 
       <nav class="nav">
-        <ul class="flex gap-8 items-center">
-          <li><a data-i18n="home" href="#home"><%= title %></a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#" class="btn contact-trigger">Contact Us</a></li>
-        </ul>
+<ul class="flex gap-8 items-center">
+<div class="lang-switcher">
+  <a href="/dk/" class="<%= t["dk"] %>">
+    <img src="/assets/flags/dk.svg" alt="DK" class="flag">
+  </a>
+  <a href="/en/" class="<%= t["en"] %>">
+    <img src="/assets/flags/sh.svg" alt="EN" class="flag">
+  </a>
+</div>
+  <li><a href="#home"><%= t["Home"] %></a></li>
+  <li><a href="#services"><%= t["Services"] %></a></li>
+  <li><a href="#about"><%= t["About"] %></a></li>
+  <li><a href="#" class="btn contact-trigger"><%= t["Contact Us"] %></a></li>
+</ul>
       </nav>
     </div>
   </header>
@@ -56,221 +64,217 @@
 
 
   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <video autoplay muted loop playsinline id="hero-video">
-      <source src="assets/hero-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-animate">Welcome to <span style="color: var(--primary-red);">SK AUTO</span>
-        </h1>
-        <p class="hero-animate">Workshop that you can trust - And more</p>
-        <a href="#" class="btn hero-animate contact-trigger">CONTACT US</a>
-      </div>
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline id="hero-video">
+    <source src="/assets/hero-video.mp4" type="video/mp4">
+    <%= t["Your browser does not support the video tag."] %>
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-animate">
+        <%= t["Welcome to"] %> <span style="color: var(--primary-red);">SK AUTO</span>
+      </h1>
+      <p class="hero-animate"><%= t["Workshop that you can trust - And more"] %></p>
+      <a href="#" class="btn hero-animate contact-trigger"><%= t["CONTACT US"] %></a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Logo Strip -->
   <!-- Dark Feature Section -->
-  <section class="dark-feature section bg-dark text-center" id="about">
-    <!-- Background Slider (Static) -->
-    <div class="background-slider">
-      <div class="slider-image active"
-        style="background-image: url('assets/high-quality-service/WhatsApp Image 2025-11-14 at 20.18.12.jpeg');"></div>
-      <div class="slider-overlay"></div>
-    </div>
-
-    <div class="container" style="position: relative; z-index: 2;">
-      <h2 class="section-title">High-Quality Service. Zero Compromise.<br> </h2>
-      <p class="section-subtitle">Team of qualified technicians making dreams come true</p>
-      <div class="flex justify-center gap-4" style="margin-top: 30px;">
-        <a href="#" class="btn btn-outline contact-trigger" id="openContactModal">CONTACT US</a>
+<section id="services" class="services">
+  <div class="container">
+    <h2><%= t["Services"] %></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3><%= t["Major repairs"] %></h3>
+        <p><%= t["Reliable solutions for complex engine and mechanical issues."] %></p>
       </div>
-
-      <div class="stats-grid grid grid-cols-1 md:grid-cols-3 gap-10 text-center"
-     style="margin-top: 60px; border-top: 1px solid #444; padding-top: 40px;">
-  <div class="stat-item" style="margin-top:100px; margin-bottom: 30px;" >
-    <h3>Experience</h3>
-    Our workshop offers repairs on all vehicles but it also has expertise in VAG groupation
-  </div>
-
-  <div class="stat-item" style="margin-top:30px; margin-bottom: 30px;"> 
-    <h3>Passion</h3>
-    Working on a car is not just a job for us. It is our drive and motivation
-  </div>
-
-  <div class="stat-item" style="margin-top:30px;">
-    <h3>Reliability</h3>
-    Work you can trust. Results you can feel.
-  </div>
-</div>
+      <div class="service-card">
+        <h3><%= t["Car Diagnostic"] %></h3>
+        <p><%= t["Precise computer-based scanning to detect and fix problems fast."] %></p>
+      </div>
+      <div class="service-card">
+        <h3><%= t["Bodywork"] %></h3>
+        <p><%= t["Professional exterior restoration, repair, and refinishing."] %></p>
+      </div>
+      <div class="service-card">
+        <h3><%= t["Oil Change"] %></h3>
+        <p><%= t["Quality oil and filter service to keep your engine running smoothly."] %></p>
+      </div>
+      <div class="service-card">
+        <h3><%= t["Tire Service"] %></h3>
+        <p><%= t["Expert mounting, balancing, and tire maintenance for safe driving."] %></p>
+      </div>
+      <div class="service-card">
+        <h3><%= t["Periodical Inspection (SYN)"] %></h3>
+        <p><%= t["Complete vehicle check to ensure safety, performance, and road readiness."] %></p>
+      </div>
     </div>
+  </div>
 </section>
 
   <!-- Services Section -->
   <section class="services section" id="services">
-    <div class="container text-center">
-      <p class="text-uppercase" style="color: #999; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">Our Core
-      </p>
-      <h2 class="section-title gradient-text" style="margin-bottom: 50px;">"Services We Provide"</h2>
+  <div class="container text-center">
+  <p class="text-uppercase" style="color: #999; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">
+    <%= t["Experience"] %>
+  </p>
+  <h2 class="section-title gradient-text" style="margin-bottom: 50px;">
+    "<%= t["Services"] %>"
+  </h2>
+</div>
+
+<div class="services-carousel-wrapper">
+  <div class="services-grid" id="servicesGrid">
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/major.jpeg" alt="Major Repairs">
+      </div>
+      <h3><%= t["Major repairs"] %></h3>
+      <p><%= t["Reliable solutions for complex engine and mechanical issues."] %></p>
     </div>
 
-    <!-- Full Width Carousel -->
-    <div class="services-carousel-wrapper">
-      <div class="services-grid" id="servicesGrid">
-        <!-- Service 1 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/major.jpeg" alt="Major Repairs">
-          </div>
-          <h3>Major repairs</h3>
-          <p>Reliable solutions for complex engine and mechanical issues.</p>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/car-d.jpeg" alt="Car Diagnostic">
-          </div>
-          <h3>Car Diagnostic</h3>
-          <p>Precise computer-based scanning to detect and fix problems fast.</p>
-        </div>
-
-        <!-- Service 3 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/bodywork.jpeg" alt="Bodywork">
-          </div>
-          <h3>Bodywork</h3>
-          <p>Professional exterior restoration, repair, and refinishing.</p>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/oil.jpeg" alt="Oil Change">
-          </div>
-          <h3>Oil Change</h3>
-          <p>Quality oil and filter service to keep your engine running smoothly.</p>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/tyre.jpg" alt="Tire Service">
-          </div>
-          <h3>Tire Service</h3>
-          <p>Expert mounting, balancing, and tire maintenance for safe driving.</p>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-card">
-          <div class="service-img">
-            <img src="/assets/services we provide/syn.jpeg" alt="syn preparation">
-          </div>
-          <h3>Periodical Inspection (SYN)</h3>
-          <p>Complete vehicle check to ensure safety, performance, and road readiness.</p>
-        </div>
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/car-d.jpeg" alt="Car Diagnostic">
       </div>
+      <h3><%= t["Car Diagnostic"] %></h3>
+      <p><%= t["Precise computer-based scanning to detect and fix problems fast."] %></p>
+    </div>
 
-      <!-- Navigation Buttons Centered Below -->
-      <div class="carousel-nav-container">
-        <button class="carousel-btn carousel-btn-prev" id="servicesPrev" aria-label="Previous">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <button class="carousel-btn carousel-btn-next" id="servicesNext" aria-label="Next">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/bodywork.jpeg" alt="Bodywork">
+      </div>
+      <h3><%= t["Bodywork"] %></h3>
+      <p><%= t["Professional exterior restoration, repair, and refinishing."] %></p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/oil.jpeg" alt="Oil Change">
       </div>
     </div>
+    <div class="service-card">
+      <h3><%= t["Oil Change"] %></h3>
+      <p><%= t["Quality oil and filter service to keep your engine running smoothly."] %></p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/tyre.jpg" alt="Tire Service">
+      </div>
+      <h3><%= t["Tire Service"] %></h3>
+      <p><%= t["Expert mounting, balancing, and tire maintenance for safe driving."] %></p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">
+        <img src="/assets/services we provide/syn.jpeg" alt="syn preparation">
+      </div>
+      <h3><%= t["Periodical Inspection (SYN)"] %></h3>
+      <p><%= t["Complete vehicle check to ensure safety, performance, and road readiness."] %></p>
+    </div>
+  </div>
+
+  <div class="carousel-nav-container">
+    <button class="carousel-btn carousel-btn-prev" id="servicesPrev" aria-label="Previous">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="carousel-btn carousel-btn-next" id="servicesNext" aria-label="Next">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+</div> 
 
     <!-- Logo Carousel - Full Width -->
     <div class="logo-loop-container" style="margin-top: 80px;">
       <div class="logo-loop-track">
         <!-- First set of logos -->
         <div class="logo-item">
-          <img src="assets/brembo-logo.png" alt="Brembo">
+          <img src="/assets/brembo-logo.png" alt="Brembo">
         </div>
         <div class="logo-item">
-          <img src="assets/continental-logo.jpg" alt="Continental">
+          <img src="/assets/continental-logo.jpg" alt="Continental">
         </div>
         <div class="logo-item">
-          <img src="assets/bosch-logo.png" alt="Bosch">
+          <img src="/assets/bosch-logo.png" alt="Bosch">
         </div>
         <div class="logo-item">
-          <img src="assets/trw-logo.png" alt="TRW">
+          <img src="/assets/trw-logo.png" alt="TRW">
         </div>
         <div class="logo-item">
-          <img src="assets/skf-logo.png" alt="SKF">
+          <img src="/assets/skf-logo.png" alt="SKF">
         </div>
         <div class="logo-item">
-          <img src="assets/lemforder-logo.png" alt="Lemförder">
+          <img src="/assets/lemforder-logo.png" alt="Lemförder">
         </div>
         <div class="logo-item">
-          <img src="assets/swag-logo.png" alt="SWAG">
+          <img src="/assets/swag-logo.png" alt="SWAG">
         </div>
         <div class="logo-item">
-          <img src="assets/pierburg-logo.png" alt="Pierburg">
+          <img src="/assets/pierburg-logo.png" alt="Pierburg">
         </div>
         <div class="logo-item">
-          <img src="assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
+          <img src="/assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
         </div>
         <div class="logo-item">
-          <img src="assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
+          <img src="/assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
         </div>
 
         <!-- Duplicate set for seamless loop -->
         <div class="logo-item">
-          <img src="assets/brembo-logo.png" alt="Brembo">
+          <img src="/assets/brembo-logo.png" alt="Brembo">
         </div>
         <div class="logo-item">
-          <img src="assets/continental-logo.jpg" alt="Continental">
+          <img src="/assets/continental-logo.jpg" alt="Continental">
         </div>
         <div class="logo-item">
-          <img src="assets/bosch-logo.png" alt="Bosch">
+          <img src="/assets/bosch-logo.png" alt="Bosch">
         </div>
         <div class="logo-item">
-          <img src="assets/trw-logo.png" alt="TRW">
+          <img src="/assets/trw-logo.png" alt="TRW">
         </div>
         <div class="logo-item">
-          <img src="assets/skf-logo.png" alt="SKF">
+          <img src="/assets/skf-logo.png" alt="SKF">
         </div>
         <div class="logo-item">
-          <img src="assets/lemforder-logo.png" alt="Lemförder">
+          <img src="/assets/lemforder-logo.png" alt="Lemförder">
         </div>
         <div class="logo-item">
-          <img src="assets/swag-logo.png" alt="SWAG">
+          <img src="/assets/swag-logo.png" alt="SWAG">
         </div>
         <div class="logo-item">
-          <img src="assets/pierburg-logo.png" alt="Pierburg">
+          <img src="/assets/pierburg-logo.png" alt="Pierburg">
         </div>
         <div class="logo-item">
-          <img src="assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
+          <img src="/assets/vw-logo.png" alt="Volkswagen" class="bright-logo">
         </div>
         <div class="logo-item">
-          <img src="assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
+          <img src="/assets/mercedes-logo.png" alt="Mercedes-Benz" class="bright-logo">
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us Section -->
-  <section class="why-choose section"
+<section class="why-choose section"
     style="background-image: url('/assets/why-choose-us/2023-BMW-M4-CSL-teaser-2-Photoroom.png'); background-color: #000;">
     <div class="why-choose-overlay"></div>
     <div class="container">
       <div class="why-choose-content">
-        <h2 class="section-title">Why Choose US ?</h2>
-        <p class="mb-4">We are not just another workshop, we are team of young technicians and we are following our
-          dreams and our passions therefore you can expect that your car will be threated with passion and love.</p>
+        <h2 class="section-title"><%= t["Why Choose US ?"] %></h2>
+        <p class="mb-4">
+          <%= t["We are not just another workshop, we are team of young technicians and we are following our dreams and our passions therefore you can expect that your car will be threated with passion and love."] %>
+        </p>
       </div>
     </div>
   </section>
@@ -279,21 +283,24 @@
   <div class="spacer-section"></div>
 
   <!-- Professional Care Section -->
-  <section class="professional-care section">
+<section class="professional-care section">
     <video autoplay muted loop playsinline class="professional-care-bg-video">
       <source src="/assets/your-car/your-car.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      <%= t["Your browser does not support the video tag."] %>
     </video>
     <div class="professional-care-overlay"></div>
     <div class="container">
       <div class="professional-care-content">
-        <h2 class="section-title">Your car deserves <br> professional care.</h2>
-        <p class="mb-4">Mainiting a car can be expensive and stressful. But not in SK Auto. Get completly new experience
-          and give your car best care.</p>
+        <h2 class="section-title">
+          <%= t["Your car deserves"] %> <br> <%= t["professional care."] %>
+        </h2>
+        <p class="mb-4">
+          <%= t["Mainiting a car can be expensive and stressful. But not in SK Auto. Get completly new experience and give your car best care."] %>
+        </p>
         <ul class="check-list">
-          <li>Warranty</li>
-          <li>Quality</li>
-          <li>Fair prices</li>
+          <li><%= t["Warranty"] %></li>
+          <li><%= t["Quality"] %></li>
+          <li><%= t["Fair prices"] %></li>
         </ul>
       </div>
     </div>
@@ -585,25 +592,25 @@
   </section>
 
   <!-- Location Section -->
-  <section class="location section" style="background-color: #000;" id="contact">
+<section class="location section" style="background-color: #000;" id="contact">
     <div class="container">
-      <p class="location-tagline">Tagline</p>
-      <h2 class="section-title">Location</h2>
-      <p class="location-description">Come visit us at our primary service center.</p>
+      <p class="location-tagline"><%= t["Tagline"] %></p>
+      <h2 class="section-title"><%= t["Location"] %></h2>
+      <p class="location-description"><%= t["Come visit us at our primary service center."] %></p>
 
       <div class="location-content">
         <div class="location-list">
           <div class="location-item">
             <h4>Hatting</h4>
             <p>Præstemarksvej 1B, 8700 Hatting, DK</p>
-            <a href="#" class="view-map-link">View Map</a>
+            <a href="https://www.google.com/maps/place/Pr%C3%A6stemarksvej+1B,+8700+Hatting,+Danska/@55.8544062,9.7644924,17z/data=!3m1!4b1!4m6!3m5!1s0x464c7d241a0b1969:0x93f545a9980f4dd1!8m2!3d55.8544062!4d9.7670673!16s%2Fg%2F11vdb9y68t?entry=ttu&g_ep=EgoyMDI2MDIwMS4wIKXMDSoKLDEwMDc5MjA2OUgBUAM%3D" class="view-map-link"><%= t["View Map"] %></a>
           </div>
 
-        <div class="location-item">
-          <h4>Working Hours</h4>
-          <p>Monday - Saturday: <strong>10:00 - 18:00</strong></p>
-          <p>Sunday: Closed</p>
-        </div>
+          <div class="location-item">
+            <h4><%= t["Working Hours"] %></h4>
+            <p><%= t["Monday - Saturday"] %>: <strong>10:00 - 18:00</strong></p>
+            <p><%= t["Sunday: Closed"] %></p>
+          </div>
         </div>
 
         <div class="location-map">
@@ -618,17 +625,17 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer bg-dark section" style="padding: 40px 0;">
+<footer class="footer bg-dark section" style="padding: 40px 0;">
     <div class="container flex justify-between items-center">
       <div class="footer-logo">
         <span style="font-weight: 900; font-size: 1.5rem; color: white;">SK<span
             style="color: var(--primary-red);">AUTO</span></span>
       </div>
       <div class="footer-links flex gap-8">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#home"><%= t["Home"] %></a>
+        <a href="#services"><%= t["Services"] %></a>
+        <a href="#about"><%= t["About"] %></a>
+        <a href="#contact"><%= t["Contact"] %></a>
       </div>
       <div class="socials flex gap-4 justify-center">
         <a href="https://www.facebook.com/profile.php?id=61573467447134" aria-label="Facebook">
@@ -660,20 +667,19 @@
     </div>
     <div class="container text-center"
       style="margin-top: 40px; border-top: 1px solid #333; padding-top: 20px; font-size: 0.8rem; color: #666;">
-      &copy; 2025 SK-AUTO. All rights reserved.
+      &copy; 2025 SK-AUTO. <%= t["All rights reserved."] %>
     </div>
   </footer>
 
   <!-- Contact Modal -->
-  <div id="contactModal" class="modal-overlay">
+<div id="contactModal" class="modal-overlay">
     <div class="modal-content">
-      <button class="modal-close">&times;</button>
+      <button class="modal-close">×</button>
       <div class="modal-grid">
-        <!-- Left Column: Contact Info -->
         <div class="modal-info">
-          <p class="modal-tagline">Contact Form</p>
-          <h2 class="modal-title">Contact us</h2>
-          <p class="modal-desc">We are happy to take your inquiry</p>
+          <p class="modal-tagline"><%= t["Contact Form"] %></p>
+          <h2 class="modal-title"><%= t["Contact us"] %></h2>
+          <p class="modal-desc"><%= t["We are happy to take your inquiry"] %></p>
 
           <div class="contact-details">
             <div class="contact-item">
@@ -705,22 +711,21 @@
           </div>
         </div>
 
-        <!-- Right Column: Form -->
         <div class="modal-form-container">
           <form class="modal-form" id="contactForm">
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="name"><%= t["Name"] %></label>
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email"><%= t["Email"] %></label>
               <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Type your message..."></textarea>
+              <label for="message"><%= t["Message"] %></label>
+              <textarea id="message" name="message" rows="4" placeholder="<%= t["Type your message..."] %>"></textarea>
             </div>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn"><%= t["Submit"] %></button>
           </form>
         </div>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
