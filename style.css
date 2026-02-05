@@ -1589,6 +1589,15 @@ ul {
   z-index: 1;
 }
 
+.disable {
+  display: none;
+}
+
+.flag {
+  width: 42px;
+  border-radius: 4px;
+}
+
 /* Gradient Text Animation */
 .gradient-text {
   background: linear-gradient(to right, #ff0000, #ff4d4d, #ff0000);
