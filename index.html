@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="dk">
 
 <head>
   <meta charset="UTF-8" />
@@ -44,7 +44,7 @@
 
       <nav class="nav">
         <ul class="flex gap-8 items-center">
-          <li><a href="#home">Home</a></li>
+          <li><a data-i18n="home" href="#home"><%= title %></a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#" class="btn contact-trigger">Contact Us</a></li>
@@ -724,7 +724,7 @@
           </form>
         </div>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script type="module" src="/src/components/contact-form.js"></script>
+        <script type="module" src="/contact-form.js"></script>
       </div>
     </div>
   </div>
