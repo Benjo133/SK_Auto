@@ -75,8 +75,7 @@ contactModal.addEventListener('click', (e) => {
 
 (function() {
     const savedLang = localStorage.getItem('user_lang');
-    const browserLang = navigator.language || navigator.userLanguage;
-    const defaultLang = browserLang.startsWith('da') ? 'dk' : 'en';
+    const defaultLang = 'dk' 
     
     const targetLang = savedLang || defaultLang;
 

@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/"
+  to = "/dk"
+  status = 302
+  conditions = {Language = ["da"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en"
+  status = 302
