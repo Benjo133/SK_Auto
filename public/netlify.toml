@@ -22,7 +22,7 @@
     # Force HTTPS (HSTS)
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # Content Security Policy (Basic version)
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://skauto.dk;"
+    Content-Security-Policy: default-src 'self'; frame-src 'self' https://www.google.com https://www.google.com/maps/embed/ https://maps.google.com;
 
 # Cache static assets (CSS/JS/Images) for better LCP (Largest Contentful Paint)
 [[headers]]
