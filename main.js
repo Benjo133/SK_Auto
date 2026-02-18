@@ -73,25 +73,32 @@ contactModal.addEventListener('click', (e) => {
     }
 });
 
-(function() {
-    const savedLang = localStorage.getItem('user_lang');
-    const defaultLang = 'dk' 
-    
-    const targetLang = savedLang || defaultLang;
+// Language toggle - single button that switches between DK and EN
+const langToggle = document.getElementById('langToggle');
+const currentFlag = document.getElementById('currentFlag');
 
-    // Prevent redirect loop if already at target
-    if (!window.location.pathname.startsWith('/' + targetLang)) {
-      window.location.href = '/' + targetLang + '/';
-    }
-  })();
+if (langToggle) {
+    // Check current language from URL
+    const currentPath = window.location.pathname;
+    const isEnglish = currentPath.includes('/en/');
 
-  document.querySelectorAll('.lang-switcher a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    // Extract lang from href (e.g., /en/ -> en)
-    const href = link.getAttribute('href');
-    const lang = href.replace(/\//g, '');
-    if (lang) {
-      localStorage.setItem('user_lang', lang);
+    // Set initial flag based on current language
+    if (isEnglish) {
+        currentFlag.src = '/assets/flags/sh.svg'; // or rename to en.svg
+        currentFlag.alt = 'EN';
+        langToggle.href = '/dk/'; // Clicking goes to Danish
+        langToggle.dataset.currentLang = 'en';
+    } else {
+        currentFlag.src = '/assets/flags/dk.svg';
+        currentFlag.alt = 'DK';
+        langToggle.href = '/en/'; // Clicking goes to English
+        langToggle.dataset.currentLang = 'dk';
     }
-  });
-});
+
+    // Save to localStorage when clicked
+    langToggle.addEventListener('click', (e) => {
+        const newLang = langToggle.dataset.currentLang === 'dk' ? 'en' : 'dk';
+        localStorage.setItem('user_lang', newLang);
+        // The actual navigation happens via the href
+    });
+}

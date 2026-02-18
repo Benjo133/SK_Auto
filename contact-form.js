@@ -1,13 +1,10 @@
-// EmailJS CDN still needed in index.html
 class ContactForm {
   constructor(containerSelector) {
     this.container = document.querySelector(containerSelector);
-    this.serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    this.templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    this.publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    this.accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
 
-    if (!this.serviceId || !this.templateId || !this.publicKey) {
-      console.error('Missing EmailJS config in .env');
+    if (!this.accessKey) {
+      console.error('Missing Web3Forms key in .env');
       return;
     }
 
@@ -17,14 +14,13 @@ class ContactForm {
   init() {
     this.form = this.container.querySelector('.modal-form');
     this.bindEvents();
-    emailjs.init(this.publicKey);
   }
 
   bindEvents() {
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
   }
 
-  async handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
 
     const btn = this.form.querySelector('button[type="submit"]');
@@ -32,22 +28,38 @@ class ContactForm {
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    try {
-      const result = await emailjs.sendForm(this.serviceId, this.templateId, this.form);
-      console.log('✅ Email sent:', result);
-      alert('Message sent to info@skauto.dk!');
-      this.form.reset();
-    } catch (error) {
-      console.error('❌ Send failed:', error);
-      alert('Failed to send. Check console.');
-    } finally {
-      btn.textContent = originalText;
-      btn.disabled = false;
-    }
+    const formData = new FormData(this.form);
+    formData.append('access_key', this.accessKey);
+    formData.append('subject', 'New Contact Form Message');
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then(result => {
+        if (result.success) {
+          console.log('✅ Email sent:', result);
+          alert('Message sent to info@skauto.dk!');
+          this.form.reset();
+        } else {
+          throw new Error(result.message || 'Unknown error');
+        }
+      })
+      .catch(error => {
+        console.error('❌ Send failed:', error);
+        alert('Failed to send. Check console.');
+      })
+      .finally(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
   }
 }
 
-// Auto-init
 document.addEventListener('DOMContentLoaded', () => {
   new ContactForm('.modal-form-container');
 });
