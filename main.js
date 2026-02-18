@@ -4,6 +4,9 @@ import { initPreloader } from './animations.js'
 import { initStickyNavbar } from './navbar.js'
 import { initServicesCarousel, initTestimonialsCarousel } from './carousel.js'
 
+import dkFlag from './assets/flags/dk.svg'
+import shFlag from './assets/flags/sh.svg'
+
 // Initialize Lenis for smooth scrolling
 const lenis = new Lenis({
     autoRaf: true,
@@ -25,24 +28,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
 
             // Close mobile menu if open
-            document.querySelector('.mobile-menu-btn').classList.remove('active');
-            document.querySelector('.nav').classList.remove('active');
+            document.querySelector('.mobile-menu-btn')?.classList.remove('active');
+            document.querySelector('.nav')?.classList.remove('active');
             document.body.classList.remove('no-scroll');
         }
     });
 });
 
-// Initialize preloader which will trigger hero animation
+// Initialize modules
 initPreloader()
-
-
-// Initialize sticky navbar
 initStickyNavbar();
-
-// Initialize services carousel
 initServicesCarousel();
-
-// Initialize testimonials carousel
 initTestimonialsCarousel();
 
 // Contact Modal Logic
@@ -50,7 +46,7 @@ const contactModal = document.getElementById('contactModal');
 const openModalBtns = document.querySelectorAll('.contact-trigger');
 const closeModalBtn = document.querySelector('.modal-close');
 
-// Open modal from any contact button
+// Open modal
 openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -60,45 +56,41 @@ openModalBtns.forEach(btn => {
 });
 
 // Close modal
-closeModalBtn.addEventListener('click', () => {
+closeModalBtn?.addEventListener('click', () => {
     contactModal.classList.remove('active');
     document.body.style.overflow = '';
 });
 
-// Close modal when clicking outside
-contactModal.addEventListener('click', (e) => {
+contactModal?.addEventListener('click', (e) => {
     if (e.target === contactModal) {
         contactModal.classList.remove('active');
         document.body.style.overflow = '';
     }
 });
 
-// Language toggle - single button that switches between DK and EN
+// Language toggle - NOW USES HASHED FLAGS!
 const langToggle = document.getElementById('langToggle');
 const currentFlag = document.getElementById('currentFlag');
 
-if (langToggle) {
-    // Check current language from URL
+if (langToggle && currentFlag) {
     const currentPath = window.location.pathname;
     const isEnglish = currentPath.includes('/en/');
 
-    // Set initial flag based on current language
+    // Set initial flag (HASHED URLs from Vite!)
     if (isEnglish) {
-        currentFlag.src = '/assets/flags/sh.svg'; // or rename to en.svg
+        currentFlag.src = shFlag;
         currentFlag.alt = 'EN';
-        langToggle.href = '/dk/'; // Clicking goes to Danish
+        langToggle.href = '/dk/';
         langToggle.dataset.currentLang = 'en';
     } else {
-        currentFlag.src = '/assets/flags/dk.svg';
+        currentFlag.src = dkFlag;
         currentFlag.alt = 'DK';
-        langToggle.href = '/en/'; // Clicking goes to English
+        langToggle.href = '/en/';
         langToggle.dataset.currentLang = 'dk';
     }
 
-    // Save to localStorage when clicked
     langToggle.addEventListener('click', (e) => {
         const newLang = langToggle.dataset.currentLang === 'dk' ? 'en' : 'dk';
         localStorage.setItem('user_lang', newLang);
-        // The actual navigation happens via the href
     });
 }
