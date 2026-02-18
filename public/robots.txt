@@ -1,0 +1,23 @@
+User-agent: *
+# Allow everything by default
+Allow: /dk
+Allow: /en
+
+# Disallow specific system/build folders (common in SSGs)
+Disallow: /admin/
+Disallow: /config/
+Disallow: /private/
+Disallow: /scripts/
+
+# Block AI scrapers to save bandwidth/compute
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+
+# Specifically allow Google's testing tools
+User-agent: Google-InspectionTool
+Allow: /
+
+# Point to your multilingual sitemap
+Sitemap: https://skauto.dk/sitemap.xml
