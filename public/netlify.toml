@@ -15,7 +15,7 @@
   for = "/*"
   [headers.values]
     # Prevent clickjacking
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN" 
     # Ensure browsers don't "guess" the MIME type
     X-Content-Type-Options = "nosniff"
     # Referral policy for privacy/SEO tracking
